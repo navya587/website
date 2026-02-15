@@ -1,0 +1,149 @@
+// ...existing code...
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>CA Jewellers</title>
+    <style>
+        /* minimal layout reset so page renders more predictably */
+        body{font-family: Arial,Helvetica,sans-serif;margin:0;padding:0;line-height:1.4}
+        .navbar{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+        .logo{font-weight:700}
+        .nav-links a{margin:0 8px;text-decoration:none;color:#333}
+        .hero{background:#f7f7f7;padding:24px}
+        .collections-section,.trending-section{padding:24px}
+        .circle-wrapper{display:flex;gap:16px;flex-wrap:wrap}
+        .circle-img img{width:120px;height:120px;object-fit:cover;border-radius:50%}
+        .listing-page{display:flex;gap:20px;padding:24px}
+        .filters{width:220px}
+        .product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;flex:1}
+        footer{background:#111;color:#fff;padding:20px}
+        .footer-grid{display:flex;gap:24px;flex-wrap:wrap}
+        .video-card video{width:200px;height:120px;object-fit:cover}
+    </style>
+</head>
+<body>
+
+<header class="navbar" role="banner">
+    <div class="logo">CA<span>jewellers</span></div>
+    <nav class="nav-links" role="navigation" aria-label="Main">
+        <a href="#">Collections</a>
+        <a href="#">Wedding</a>
+        <a href="#">Gifting</a>
+        <a href="#">Rings</a>
+        <a href="#">Earrings</a>
+    </nav>
+    <div class="search-container">
+        <input type="text" placeholder="Search for jewelry..." aria-label="Search">
+        <button aria-label="Search">🔍</button>
+    </div>
+</header>
+
+<section class="hero" role="region" aria-label="Hero">
+    <div class="slider">
+        <div class="slide active">
+            <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=1600" alt="Bridal banner" style="width:100%;height:auto;display:block;">
+            <div class="hero-text" style="padding:12px">
+                <h1>Bridal Excellence</h1>
+                <p>Discover our exclusive wedding collection.</p>
+                <button>Shop Now</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="collections-section" class="collections-section" role="region" aria-label="Collections">
+    <h2>Discover Our Collections</h2>
+    <div class="circle-wrapper" role="list">
+        <div class="category-item" role="listitem" onclick="window.location.href='listing.html'">
+            <div class="circle-img">
+                <img src="https://images.unsplash.com/photo-1630019011339-da326955740a?w=400&h=400&fit=crop" alt="Earrings">
+            </div>
+            <p>Earrings</p>
+        </div>
+
+        <div class="category-item" role="listitem" onclick="window.location.href='listing.html'">
+            <div class="circle-img">
+                <img src="https://images.unsplash.com/photo-1619119069152-a2b331eb392a?w=400&h=400&fit=crop" alt="Bangles">
+            </div>
+            <p>Bangles</p>
+        </div>
+
+        <div class="category-item" role="listitem" onclick="window.location.href='listing.html'">
+            <div class="circle-img">
+                <img src="https://images.unsplash.com/photo-1599643477877-537ef5278533?w=400&h=400&fit=crop" alt="Pendants">
+            </div>
+            <p>Chain Pendant</p>
+        </div>
+
+        <div class="category-item" role="listitem" onclick="window.location.href='listing.html'">
+            <div class="circle-img">
+                <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=400&h=400&fit=crop" alt="Rings">
+            </div>
+            <p>Finger Rings</p>
+        </div>
+    </div>
+</section>
+
+<div class="listing-page" role="main">
+    <aside class="filters" aria-label="Filters">
+        <h3>Filters</h3>
+        <div class="filter-group">
+            <label for="price-range">Price Range</label>
+            <input id="price-range" type="range" min="0" max="100000" step="1000">
+        </div>
+        <div class="filter-group">
+            <label for="metal">Base Metal</label>
+            <select id="metal"><option>Gold</option><option>Silver</option></select>
+        </div>
+    </aside>
+
+    <main class="product-grid" aria-live="polite">
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500" alt="Diamond Necklace" style="width:100%;height:auto">
+            <h4>Diamond Necklace Set</h4>
+            <p>₹45,000</p>
+            <div class="rating" aria-label="5 out of 5 stars">⭐⭐⭐⭐⭐</div>
+        </div>
+        <!-- add more product cards here -->
+    </main>
+</div>
+
+<section class="trending-section" role="region" aria-label="Trending Looks">
+    <h2 class="section-title">Trending Looks</h2>
+    <div class="reels-container">
+        <div class="reel-card">
+            <video src="https://www.w3schools.com/html/mov_bbb.mp4" loop muted playsinline onmouseover="this.play()" onmouseout="this.pause()"></video>
+            <div class="reel-info">Bridal Glow</div>
+        </div>
+        <div class="reel-card">
+            <video src="https://www.w3schools.com/html/mov_bbb.mp4" loop muted playsinline onmouseover="this.play()" onmouseout="this.pause()"></video>
+            <div class="reel-info">Party Essentials</div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer" role="contentinfo">
+    <div class="footer-grid">
+        <div class="footer-col">
+            <h4>Associate With Us</h4>
+            <a href="#" style="color:#fff">Contact Us</a><br>
+            <a href="#" style="color:#fff">Blog</a>
+        </div>
+        <div class="footer-col">
+            <h4>Policy Matters</h4>
+            <a href="#" style="color:#fff">Privacy</a><br>
+            <a href="#" style="color:#fff">Shipping</a>
+        </div>
+        <div class="footer-col">
+            <h4>Follow Us</h4>
+            <div class="social-links" style="margin-bottom:8px">FB | IG | TW</div>
+            <input type="email" placeholder="Subscribe for updates" aria-label="Subscribe email">
+            <button>Join</button>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
